@@ -132,5 +132,10 @@
       }
     }
   },
-  "defaultProject": "student-details-app"
+  "defaultProject": "student-details-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
