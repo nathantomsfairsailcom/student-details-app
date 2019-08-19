@@ -1,18 +1,18 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { FormPageComponent, SuccessPageComponent } from "./pages";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { FormPageComponent, SuccessPageComponent } from './pages';
 
 const routes: Routes = [
   {
-    path: "success",
+    path: 'success',
     component: SuccessPageComponent
   },
   {
-    path: "",
+    path: '',
     component: FormPageComponent
   },
   {
-    path: "**",
+    path: '**',
     component: FormPageComponent
   }
 ];
