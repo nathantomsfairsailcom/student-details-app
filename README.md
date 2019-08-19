@@ -1,31 +1,32 @@
 # StudentDetailsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## :clipboard: Pre-Requisites
 
-## Development server
+- NodeJS and npm
+- [Angular CLI, version 7.3.8](https://github.com/angular/angular-cli)
+- [Firebase CLI](https://github.com/firebase/firebase-tools)
+
+## :running: Run Locally
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+## :house_with_garden: Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Run with --prod for production build.
 
-## Deploying to Firebase
+## :pray: Deploying to Firebase
+
+Log in to Firebase using `firebase login`.
 
 Run `firebase deploy` to deploy to Firebase.
 
-## Running unit tests
+## :bookmark_tabs: Test
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng test` to run Jasmine tests.
 
-## Running end-to-end tests
+## :star2: Angular Commands
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
+`ng e2e` to run end-to-end tests.
+`ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
