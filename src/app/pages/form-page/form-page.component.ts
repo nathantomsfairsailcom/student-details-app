@@ -20,7 +20,9 @@ export class FormPageComponent {
     // TODO get this from form
     const details = {
       name: 'King Edward',
-      email: 'king@potato.org'
+      email: 'king@potato.org',
+      degreeTitle: 'Agriculture',
+      currentYearOfStudy: 3
     };
 
     this.detailsService.addDetails(details).subscribe(
