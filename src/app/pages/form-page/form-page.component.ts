@@ -16,7 +16,12 @@ export class FormPageComponent {
    * Send details from the form to the backend.
    */
   addDetails(): void {
-    const details = {potato: 'King Edward'};
+
+    // TODO get this from form
+    const details = {
+      name: 'King Edward',
+      email: 'king@potato.org'
+    };
 
     this.detailsService.addDetails(details).subscribe(
 
