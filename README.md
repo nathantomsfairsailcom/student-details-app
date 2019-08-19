@@ -8,11 +8,11 @@
 
 ## :running: Run Locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ng serve`, browse to `http://localhost:4200/`.
 
 ## :house_with_garden: Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Run with --prod for production build.
+`ng build`, with `--prod` for production build.
 
 ## :pray: Deploying to Firebase
 
@@ -27,6 +27,7 @@ Run `firebase deploy` to deploy to Firebase.
 ## :star2: Angular Commands
 
 `ng e2e` to run end-to-end tests.
+
 `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`ng help` or [navigate here](https://github.com/angular/angular-cli/blob/master/README.md) for more commands.
