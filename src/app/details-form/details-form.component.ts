@@ -45,7 +45,7 @@ export class DetailsFormComponent implements OnInit {
       name: ['', [Validators.required]],
       email: ['', [Validators.required]],
       degreeTitle: ['', [Validators.required]],
-      currentYear: [1, [Validators.required]],
+      currentYear: [null, [Validators.required]],
       terms: [false, [Validators.required]]
     });
   }

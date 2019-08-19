@@ -7,5 +7,24 @@ input[type=checkbox] {
 }
 
 .input-group-text {
-  min-width: 180px;
+  min-width: 11em;
+}
+
+.button-group-right {
+  position: absolute;
+  right: 0;
+}
+
+.button-group-left {
+  position: absolute;
+  left: 0;
+}
+
+.button-group {
+  position: relative;
+}
+
+.form-check {
+  display: inline-block;
+  margin-right: 1em;
 }
