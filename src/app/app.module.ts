@@ -1,6 +1,7 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 // Routing
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { DetailsService } from './services';
    ],
    imports: [
       BrowserModule,
+      HttpClientModule,
       AppRoutingModule
    ],
   providers: [DetailsService],

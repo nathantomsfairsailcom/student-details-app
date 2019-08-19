@@ -10,7 +10,7 @@ const backendDir = path.resolve(rootDir, 'functions');
 
 const preparePath = (path, project) => {
   return new Promise((resolve, reject) => {
-    console.log('\nInstalling dependencies for ' + project);
+    console.log('\n==========/ Installing dependencies for ' + project);
     spawn(
       'npm',
       ['install'],
@@ -31,7 +31,7 @@ const preparePath = (path, project) => {
 
 const buildProject = () => {
   return new Promise((resolve, reject) => {
-    console.log('\nBuilding frontend.');
+    console.log('\n==========/ Building frontend.');
     spawn(
       'ng',
       ['build'],
@@ -52,7 +52,7 @@ const buildProject = () => {
 
 const deploy = () => {
   return new Promise((resolve, reject) => {
-    console.log('\nDeploying to Firebase.');
+    console.log('\n==========/ Deploying to Firebase.');
     spawn(
       'firebase',
       ['deploy'],
