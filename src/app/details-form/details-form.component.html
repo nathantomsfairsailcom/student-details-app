@@ -10,21 +10,19 @@
         <span class="input-group-text" id="inputGroupPrepend3">Email</span>
       </div>
       <input type="email" class="form-control" id="emailInput" placeholder="Enter email" aria-describedby="emailHelp" required>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-    <div class="form-group">
-      <label for="emailInput">Email address</label>
-      <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="degreeTitleInput">Degree Title</label>
-      <input type="email" class="form-control" id="emailInput" aria-describedby="dergeeTitleHelp" placeholder="Enter degree title">
-    </div>
-    <div class="form-group">
-        <label for="degreeTitleInput">Degree Title</label>
-        <input type="email" class="form-control" id="emailInput" aria-describedby="dergeeTitleHelp" placeholder="Enter degree title">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="degreeTitlePrepend">Degree title</span>
       </div>
+      <input type="text" class="form-control" id="degreeTitleInput" placeholder="Enter degree title" aria-describedby="degreeTitleHelp" required>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="currentYearPrepend">Current year of study</span>
+      </div>
+      <input type="number" class="form-control" id="currentYearInput" placeholder="Enter current year" aria-describedby="currentYearHelp" value=1 required>
+    </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
