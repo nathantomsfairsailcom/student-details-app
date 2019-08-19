@@ -9,7 +9,8 @@ import { SuccessPageComponent } from './pages';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SuccessPageComponent
   ],
   imports: [
     BrowserModule,
