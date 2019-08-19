@@ -14,6 +14,7 @@ import { DetailsFormComponent } from './details-form/details-form.component';
 
 // Services
 import { DetailsService } from './services';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
@@ -27,7 +28,8 @@ import { DetailsService } from './services';
    imports: [
       BrowserModule,
       HttpClientModule,
-      AppRoutingModule
+      AppRoutingModule,
+      ReactiveFormsModule
    ],
   providers: [DetailsService],
    bootstrap: [
