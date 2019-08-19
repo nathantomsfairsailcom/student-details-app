@@ -25,13 +25,14 @@ const firestore = new Firestore({
  * CORS middleware required because the hosting domain and Cloud Functions domain
  * are not the same.
  *
- * See https://stackoverflow.com/questions/42755131/enabling-cors-in-cloud-functions-for-firebase
+ * https://cloud.google.com/functions/docs/writing/http#handling_cors_requests
+ * https://stackoverflow.com/questions/42755131/enabling-cors-in-cloud-functions-for-firebase
  */
 const cors = require('cors')({origin: true});
 const express = require('express');
 const app = express();
 app.use(cors);
-app.options('/save', cors);
+app.options('*', cors);
 
 //==============================================================================
 // Endpoints
@@ -42,9 +43,20 @@ app.options('/save', cors);
  */
 exports.save = functions.https.onRequest((req, res) => {
 
+  // Authorize response (CORS)
+  res.set('Access-Control-Allow-Origin', '*');
+
+  // Respond for CORS pre-flight requests
+  if (req.method === 'OPTIONS') {
+    res.set('Access-Control-Allow-Methods', 'GET');
+    res.set('Access-Control-Allow-Headers', 'Content-Type');
+    res.set('Access-Control-Max-Age', '3600');
+    return res.status(204).send('');
+  }
+
   // Deny forbidden request methods
   if (req.method === 'GET' || req.method === 'PUT' || req.method === 'DELETE') {
-    res.status(403).send({error: ('Could not perform ' + req.method + ' operation.')});
+    return res.status(403).send({error: ('Could not perform ' + req.method + ' operation.')});
   }
 
   // Get details from request
@@ -59,12 +71,10 @@ exports.save = functions.https.onRequest((req, res) => {
   return firestore.collection(studentsTable)
     .add(newRecord)
     .then(() => {
-      res.status(201).send({message: 'Details saved successfully.'});
-      return;
+      return res.status(201).send({message: 'Details saved successfully.'});
     })
     .catch(err => {
       console.error(err);
-      res.status(500).send({message: 'Unable to store details.', error: err});
-      return;
+      return res.status(500).send({message: 'Unable to store details.', error: err});
     });
 });
