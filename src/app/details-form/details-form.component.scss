@@ -2,11 +2,10 @@
   margin:10px 0px;
 }
 
-.input-group-prepend {
-  min-width: 180px;
+input[type=checkbox] {
+  transform: scale(1.25);
 }
 
 .input-group-text {
-  border: none;
-  background: none;
+  min-width: 180px;
 }
