@@ -1,4 +1,4 @@
-# StudentDetailsApp
+# Student Details App
 
 ## :clipboard: Pre-Requisites
 
@@ -6,19 +6,15 @@
 - [Angular CLI, version 7.3.8](https://github.com/angular/angular-cli)
 - [Firebase CLI](https://github.com/firebase/firebase-tools)
 
-## :running: Run Locally
+## :running: Run Frontend Locally
 
 `ng serve`, browse to `http://localhost:4200/`.
 
-## :house_with_garden: Build
-
-`ng build`, with `--prod` for production build.
-
 ## :pray: Deploying to Firebase
 
-Log in to Firebase using `firebase login`.
+(One-time only) Log in to Firebase using `firebase login`.
 
-Run `firebase deploy` to deploy to Firebase.
+`node deploy`
 
 ## :bookmark_tabs: Test
 
