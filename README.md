@@ -22,8 +22,6 @@
 
 ## :star2: Angular Commands
 
-`ng e2e` to run end-to-end tests.
-
 `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 `ng help` or [navigate here](https://github.com/angular/angular-cli/blob/master/README.md) for more commands.

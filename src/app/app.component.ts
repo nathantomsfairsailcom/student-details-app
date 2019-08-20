@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'sd-root',
   template: `
     <sd-header></sd-header>
     <router-outlet></router-outlet>
