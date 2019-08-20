@@ -27,7 +27,7 @@ export class FormPageComponent {
         this.router.navigate(['success']);
       },
       (error: any) => {
-        console.error(error);
+        console.error('Error message: ' + error.error.message);
       }
     );
   }

@@ -69,11 +69,30 @@ exports.save = functions.https.onRequest((req, res) => {
     currentYearOfStudy: req.body.currentYearOfStudy
   };
 
-  // Add to database
-  return students.add(newRecord)
-    .then(() => res.status(201).send({message: 'Details saved successfully.'}))
-    .catch(err => {
+  // Perform insert
+  return students.where('email', '==', newRecord.email)
+    .get()
+    .then(querySnapshot => {
+
+      // If it is not a duplicate, save it
+      if (querySnapshot.empty) {
+        return students.add(newRecord)
+          .then(() => res.status(201).send(
+            {message: 'Details saved successfully.'}
+          )).catch(err => {
+            console.error(err);
+            return res.status(500).send({message: 'Unable to store details.'});
+          });
+      } else {
+
+        // This is a duplicate email, so return a conflict error
+        return res.status(409).send(
+          {message: newRecord.email + ' already exists.'}
+        );
+      }
+
+    }).catch(err => {
       console.error(err);
-      return res.status(500).send({message: 'Unable to store details.', error: err});
+      return res.status(500).send({message: 'Unable to store details.'});
     });
 });
