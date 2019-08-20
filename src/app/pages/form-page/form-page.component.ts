@@ -3,12 +3,13 @@ import { Component, Inject } from '@angular/core';
 
 // Services
 import { DetailsService } from 'src/app/services';
+
+// Models
 import { DetailsModel } from 'src/app/models';
 
 @Component({
   selector: 'sd-form-page',
-  templateUrl: './form-page.component.html',
-  styleUrls: ['./form-page.component.scss']
+  templateUrl: './form-page.component.html'
 })
 export class FormPageComponent {
   constructor(@Inject(DetailsService) private detailsService: DetailsService) {}

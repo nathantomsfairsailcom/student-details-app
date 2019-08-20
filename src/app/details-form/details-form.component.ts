@@ -1,5 +1,8 @@
+// Angular
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+// Models
 import { DetailsModel } from 'src/app/models';
 
 @Component({
