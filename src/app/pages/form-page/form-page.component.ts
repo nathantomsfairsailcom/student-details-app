@@ -3,6 +3,7 @@ import { Component, Inject } from '@angular/core';
 
 // Services
 import { DetailsService } from 'src/app/services';
+import { DetailsModel } from 'src/app/models';
 
 @Component({
   selector: 'sd-form-page',
@@ -15,22 +16,11 @@ export class FormPageComponent {
   /**
    * Send details from the form to the backend.
    */
-  addDetails(): void {
-
-    // TODO get this from form
-    const details = {
-      name: 'King Edward',
-      email: 'king@potato.org',
-      degreeTitle: 'Agriculture',
-      currentYearOfStudy: 3
-    };
-
+  addDetails(details: DetailsModel): void {
     this.detailsService.addDetails(details).subscribe(
-
       (result: any) => {
         console.log(result);
       },
-
       (error: any) => {
         console.error(error);
       }

@@ -10,7 +10,7 @@ const backendDir = path.resolve(rootDir, 'functions');
 
 const preparePath = (path, project) => {
   return new Promise((resolve, reject) => {
-    console.log('\n==========/ Installing dependencies for ' + project);
+    console.log('\n==========/ Installing dependencies for ' + project + '.\n');
     spawn(
       'npm',
       ['install'],

@@ -56,7 +56,9 @@ exports.save = functions.https.onRequest((req, res) => {
 
   // Deny forbidden request methods
   if (req.method === 'GET' || req.method === 'PUT' || req.method === 'DELETE') {
-    return res.status(403).send({error: ('Could not perform ' + req.method + ' operation.')});
+    return res.status(403).send({
+      error: ('Could not perform ' + req.method + ' operation.')
+    });
   }
 
   // Get details from request

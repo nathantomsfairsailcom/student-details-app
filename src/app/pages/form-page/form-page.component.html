@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Student Details</h1>
-  <sd-details-form></sd-details-form>
+  <sd-details-form (submitForm)="addDetails($event)">
+  </sd-details-form>
 </div>
-
-<p style="margin-top: 50px;"><button (click)="addDetails()">SAVE YO</button></p>

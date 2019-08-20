@@ -9,20 +9,20 @@ import { DetailsModel } from 'src/app/models';
 })
 export class DetailsFormComponent implements OnInit {
 
-  @Output()
-  submitForm = new EventEmitter<DetailsModel>();
+  @Output() submitForm = new EventEmitter<DetailsModel>();
 
   public details: DetailsModel;
   public detailsForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.resetFormGroup();
   }
 
+  /**
+   * Emit the contents of the form to the parent when the form is submitted.
+   */
   public onSubmit(studentDetails) {
     if(this.detailsForm.valid) {
       this.details = {
@@ -33,7 +33,6 @@ export class DetailsFormComponent implements OnInit {
       };
       this.submitForm.emit(this.details);
     }
-    console.log('*nt: this.details: ', this.details);
   }
 
   public onReset() {
