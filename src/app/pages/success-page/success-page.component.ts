@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'sd-success',
-  templateUrl: './success-page.component.html'
+  templateUrl: './success-page.component.html',
+  styleUrls: ['./success-page.component.scss']
 })
 export class SuccessPageComponent {
 
