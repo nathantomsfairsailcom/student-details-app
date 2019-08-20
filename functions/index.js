@@ -4,13 +4,6 @@
 
 const projectId = 'student-details-app-sgp';
 
-/*
- * This is currently a "test" collection, which means anyone with the URL can
- * make the below request without authenticating. In production we would want to
- * use a private collection, which would require some authentication in here.
- */
-const studentsTable = 'students';
-
 // Firebase
 const functions = require('firebase-functions');
 
@@ -20,6 +13,13 @@ const firestore = new Firestore({
   projectId: projectId,
   timestampsInSnapshots: true,
 });
+
+/*
+ * This is currently a "test" collection, which means anyone with the URL can
+ * make the below request without authenticating. In production we would want to
+ * use a private collection, which would require some authentication in here.
+ */
+const students = firestore.collection('students');
 
 /*
  * CORS middleware required because the hosting domain and Cloud Functions domain
@@ -70,11 +70,8 @@ exports.save = functions.https.onRequest((req, res) => {
   };
 
   // Add to database
-  return firestore.collection(studentsTable)
-    .add(newRecord)
-    .then(() => {
-      return res.status(201).send({message: 'Details saved successfully.'});
-    })
+  return students.add(newRecord)
+    .then(() => res.status(201).send({message: 'Details saved successfully.'}))
     .catch(err => {
       console.error(err);
       return res.status(500).send({message: 'Unable to store details.', error: err});
