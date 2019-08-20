@@ -4,7 +4,17 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'sd-success',
-  templateUrl: './success-page.component.html',
+  template: `
+    <h2 class="success-page__message">
+      Success!
+    </h2>
+
+    <div class="success-page__return-button-container">
+      <button (click)="onReturn()" type="reset" class="btn btn-light">
+        Return
+      </button>
+    </div>
+  `,
   styleUrls: ['./success-page.component.scss']
 })
 export class SuccessPageComponent {

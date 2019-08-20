@@ -10,7 +10,14 @@ import { DetailsModel } from 'src/app/models';
 
 @Component({
   selector: 'sd-form-page',
-  templateUrl: './form-page.component.html'
+  template: `
+    <div class="container">
+      <h1>Student Details</h1>
+
+      <sd-details-form (submitForm)="addDetails($event)">
+      </sd-details-form>
+    </div>
+  `
 })
 export class FormPageComponent {
 
