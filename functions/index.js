@@ -43,6 +43,13 @@ app.options('*', cors);
  */
 exports.save = functions.https.onRequest((req, res) => {
 
+  // Deny forbidden request methods
+  if (req.method === 'GET' || req.method === 'PUT' || req.method === 'DELETE') {
+    return res.status(403).send({
+      error: ('Could not perform ' + req.method + ' operation.')
+    });
+  }
+
   // Authorize response (CORS)
   res.set('Access-Control-Allow-Origin', '*');
 
@@ -52,13 +59,6 @@ exports.save = functions.https.onRequest((req, res) => {
     res.set('Access-Control-Allow-Headers', 'Content-Type');
     res.set('Access-Control-Max-Age', '3600');
     return res.status(204).send('');
-  }
-
-  // Deny forbidden request methods
-  if (req.method === 'GET' || req.method === 'PUT' || req.method === 'DELETE') {
-    return res.status(403).send({
-      error: ('Could not perform ' + req.method + ' operation.')
-    });
   }
 
   // Get details from request
