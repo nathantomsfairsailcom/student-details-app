@@ -10,7 +10,7 @@ const backendDir = path.resolve(rootDir, 'functions');
 
 const preparePath = (path, project) => {
   return new Promise((resolve, reject) => {
-    console.log('\n==========/ Installing dependencies for ' + project + '.\n');
+    console.log(`\n==========/ Installing ${project} dependencies.\n`);
     spawn(
       'npm',
       ['install'],
@@ -29,7 +29,7 @@ const preparePath = (path, project) => {
   });
 };
 
-const buildProject = () => {
+const buildFrontend = () => {
   return new Promise((resolve, reject) => {
     console.log('\n==========/ Building frontend.');
     spawn(
@@ -50,12 +50,12 @@ const buildProject = () => {
   });
 };
 
-const deploy = () => {
+const deploy = (component, project) => {
   return new Promise((resolve, reject) => {
-    console.log('\n==========/ Deploying to Firebase.');
+    console.log(`\n==========/ Deploying ${project} to Firebase.`);
     spawn(
       'firebase',
-      ['deploy'],
+      ['deploy', '--only', component],
       {
         cwd: rootDir,
         stdio: 'inherit',
@@ -65,7 +65,7 @@ const deploy = () => {
       if (code === 0) {
         resolve();
       } else {
-        reject(`\nDeployment failed with exit code:- ${code}.`);
+        reject(`\nDeploying ${project} failed with exit code:- ${code}.`);
       }
     });
   });
@@ -73,10 +73,11 @@ const deploy = () => {
 
 const main = async () => {
   try {
-    await preparePath(rootDir, 'frontend');
     await preparePath(backendDir, 'backend');
-    await buildProject();
-    await deploy();
+    await deploy('functions', 'backend');
+    await preparePath(rootDir, 'frontend');
+    await buildFrontend();
+    await deploy('hosting', 'frontend');
   } catch (err) {
     console.error(err);
   }
