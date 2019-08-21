@@ -34,7 +34,7 @@ const buildProject = () => {
     console.log('\n==========/ Building frontend.');
     spawn(
       'ng',
-      ['build'],
+      ['build', '--prod'],
       {
         cwd: rootDir,
         stdio: 'inherit',
