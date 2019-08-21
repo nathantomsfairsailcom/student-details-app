@@ -32,7 +32,9 @@ export class DetailsFormComponent implements OnInit {
         name: studentDetails.name,
         email: studentDetails.email,
         degreeTitle: studentDetails.degreeTitle,
-        currentYearOfStudy: studentDetails.currentYear
+        currentYearOfStudy: studentDetails.currentYear,
+        desiredJobType: null, // TODO - get this from the field when implemented
+        preferredWorkLocation: null // TODO - get this from the picklist when implemented
       };
       this.submitForm.emit(this.details);
     }

@@ -99,12 +99,20 @@ exports.people = functions.https.onRequest((req, res) => {
   }
 
   // Get details from request
-  const newRecord = {
+  let newRecord = {
     name: req.body.name,
     email: req.body.email,
     degreeTitle: req.body.degreeTitle,
-    currentYearOfStudy: req.body.currentYearOfStudy
+    currentYearOfStudy: req.body.currentYearOfStudy,
+    desiredJobType: req.body.desiredJobType
   };
+  if (req.body.preferredWorkLocation) {
+    newRecord.preferredLocation = req.body.preferredWorkLocation.officeLocation;
+    newRecord.preferredBusinessUnit = req.body.preferredWorkLocation.businessUnit;
+  } else {
+    newRecord.preferredLocation = null;
+    newRecord.preferredBusinessUnit = null;
+  }
 
   // Perform insert
   return people.where('email', '==', newRecord.email)

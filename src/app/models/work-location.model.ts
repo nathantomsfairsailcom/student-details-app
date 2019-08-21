@@ -1,5 +1,5 @@
 export interface WorkLocationModel {
-  id: string;
+  id?: string;
   officeLocation: string;
   businessUnit: string;
 }
