@@ -16,6 +16,10 @@
 
 `node deploy`
 
+### Backend Only
+
+`firebase deploy --only functions`
+
 ## :bookmark_tabs: Test
 
 `ng test` to run Jasmine tests.
