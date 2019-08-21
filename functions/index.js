@@ -61,7 +61,9 @@ exports.locations = functions.https.onRequest((req, res) => {
   // Perform query
   return workLocations.get()
     .then(querySnapshot => {
-      const locations = querySnapshot.docs.map(doc => doc.data);
+      const locations = querySnapshot.docs.map(doc => {
+        return Object.assign({id: doc.id}, doc.data());
+      });
       return res.status(200).send(locations);
     })
     .catch(err => {
