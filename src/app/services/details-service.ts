@@ -16,9 +16,9 @@ export class DetailsService {
   constructor(private http: HttpClient) {}
 
   /**
-   * Add some student details to the database.
+   * Add some personal details to the database.
    */
   addDetails(details: DetailsModel): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/save`, details);
+    return this.http.post<any>(`${this.baseUrl}/people`, details);
   }
 }
