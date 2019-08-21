@@ -59,7 +59,8 @@ exports.locations = functions.https.onRequest((req, res) => {
   }
 
   // Perform query
-  return workLocations.get()
+  return workLocations.orderBy('officeLocation')
+    .get()
     .then(querySnapshot => {
       const locations = querySnapshot.docs.map(doc => {
         return Object.assign({id: doc.id}, doc.data());
