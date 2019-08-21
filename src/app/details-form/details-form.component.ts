@@ -48,8 +48,8 @@ export class DetailsFormComponent implements OnInit {
     this.detailsForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required]],
-      degreeTitle: ['', [Validators.required]],
-      currentYear: [null, [Validators.required]],
+      degreeTitle: ['', []],
+      currentYear: [null, []],
       terms: [false, [Validators.required]]
     });
   }
