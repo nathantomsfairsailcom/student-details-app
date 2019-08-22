@@ -28,15 +28,15 @@ export class DetailsFormComponent implements OnInit {
   /**
    * Emit the contents of the form to the parent when the form is submitted.
    */
-  public onSubmit(details) {
+  public onSubmit(formDetails) {
     if (this.detailsForm.valid) {
       this.details = {
-        name: details.name,
-        email: details.email,
-        degreeTitle: details.degreeTitle,
-        currentYearOfStudy: details.currentYear,
-        desiredJobType: details.desiredJob,
-        preferredWorkLocation: this.findLocation(details.workLocation)
+        name: formDetails.name,
+        email: formDetails.email,
+        degreeTitle: formDetails.degreeTitle,
+        currentYearOfStudy: formDetails.currentYear,
+        desiredJobType: formDetails.desiredJob,
+        workLocation: this.findLocation(formDetails.workLocation)
       };
       this.submitForm.emit(this.details);
     }

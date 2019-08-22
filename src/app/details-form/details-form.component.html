@@ -2,7 +2,9 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="fullNamePrepend">Full name</span>
+      <span class="input-group-text" id="fullNamePrepend">
+        Full name
+      </span>
     </div>
     <input type="text" class="form-control" formControlName="name" id="fullNameInput" placeholder="Enter full name"
       aria-describedby="fullNameHelp">
@@ -10,7 +12,9 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroupPrepend3">Email</span>
+      <span class="input-group-text" id="inputGroupPrepend3">
+        Email
+      </span>
     </div>
     <input type="email" class="form-control" formControlName="email" id="emailInput" placeholder="Enter email"
       aria-describedby="emailHelp">
@@ -18,7 +22,9 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="degreeTitlePrepend">Degree title</span>
+      <span class="input-group-text" id="degreeTitlePrepend">
+        Degree title
+      </span>
     </div>
     <input type="text" class="form-control" formControlName="degreeTitle" id="degreeTitleInput"
       placeholder="Enter degree title" aria-describedby="degreeTitleHelp">
@@ -26,7 +32,9 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="currentYearPrepend">Current year of study</span>
+      <span class="input-group-text" id="currentYearPrepend">
+        Current year of study
+      </span>
     </div>
     <input type="number" class="form-control" formControlName="currentYear" id="currentYearInput"
       placeholder="Enter current year" aria-describedby="currentYearHelp" value=1>
@@ -34,7 +42,9 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="desiredJobPrepend">Desired job type</span>
+      <span class="input-group-text" id="desiredJobPrepend">
+        Desired job type
+      </span>
     </div>
     <input type="text" class="form-control" formControlName="desiredJob" id="desiredJobInput"
       placeholder="Enter desired job type" aria-describedby="desiredJobHelp">
@@ -42,27 +52,36 @@
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <label class="input-group-text" id="workLocationPrepend">Preferred location</label>
+      <label class="input-group-text" id="workLocationPrepend">
+        Location
+      </label>
     </div>
     <select class="custom-select" formControlName="workLocation" id="workLocationInput"
       aria-describedby="workLocationHelp">
-      <option *ngFor="let location of workLocations" [value]="location.id">{{ location.officeLocation }}</option>
+      <option *ngFor="let location of workLocations" [value]="location.id">
+        {{ location.officeLocation }} - {{ location.businessUnit }}
+      </option>
     </select>
   </div>
 
   <div class="button-group">
     <div class="button-group-left">
-      <button type="reset" class="btn btn-light">Clear</button>
+      <button type="reset" class="btn btn-light">
+        Clear
+      </button>
     </div>
 
     <div class="button-group-right">
       <div class="form-check">
         <input type="checkbox" class="form-check-input" formControlName="terms" id="termsAndConditionsInput" required>
-        <label class="form-check-label" for="termsAndConditionsInput">I have read and accept the terms and
-          conditions</label>
+        <label class="form-check-label" for="termsAndConditionsInput">
+          I have read and accept the terms and conditions
+        </label>
       </div>
 
-      <button type="submit" class="btn btn-primary">Save Details</button>
+      <button type="submit" class="btn btn-primary">
+        Save Details
+      </button>
     </div>
   </div>
 

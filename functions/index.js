@@ -106,9 +106,9 @@ exports.people = functions.https.onRequest((req, res) => {
     currentYearOfStudy: req.body.currentYearOfStudy,
     desiredJobType: req.body.desiredJobType
   };
-  if (req.body.preferredWorkLocation) {
-    newRecord.preferredLocation = req.body.preferredWorkLocation.officeLocation;
-    newRecord.preferredBusinessUnit = req.body.preferredWorkLocation.businessUnit;
+  if (req.body.workLocation) {
+    newRecord.preferredLocation = req.body.workLocation.officeLocation;
+    newRecord.preferredBusinessUnit = req.body.workLocation.businessUnit;
   } else {
     newRecord.preferredLocation = null;
     newRecord.preferredBusinessUnit = null;
