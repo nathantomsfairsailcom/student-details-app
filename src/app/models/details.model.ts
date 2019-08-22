@@ -6,4 +6,5 @@ export interface DetailsModel {
   currentYearOfStudy?: number;
   desiredJobType?: string;
   workLocation?: WorkLocationModel;
+  event?: string;
 }

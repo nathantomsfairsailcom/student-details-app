@@ -36,7 +36,8 @@ export class DetailsFormComponent implements OnInit {
         degreeTitle: formDetails.degreeTitle,
         currentYearOfStudy: formDetails.currentYear,
         desiredJobType: formDetails.desiredJob,
-        workLocation: this.findLocation(formDetails.workLocation)
+        workLocation: this.findLocation(formDetails.workLocation),
+        event: formDetails.event
       };
       this.submitForm.emit(this.details);
     }
@@ -61,6 +62,7 @@ export class DetailsFormComponent implements OnInit {
       currentYear: [null, []],
       desiredJob: ['', []],
       workLocation: [null, []],
+      event: ['', []],
       terms: [false, [Validators.required]]
     });
   }

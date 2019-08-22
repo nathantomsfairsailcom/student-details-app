@@ -10,7 +10,7 @@ import {
 import { DetailsService } from './details-service';
 
 // Mocks
-import { getDetailsMock, getWorkLocationsMock } from 'src/app/mocks';
+import { getDetailsMock, getWorkLocationMock } from 'src/app/mocks';
 
 describe('Service: DetailsService (Mocked Rest)', () => {
   let service: DetailsService;
@@ -33,7 +33,7 @@ describe('Service: DetailsService (Mocked Rest)', () => {
   }));
 
   it('should make a GET request and return a response when retrieving work locations', async(() => {
-    const response = getWorkLocationsMock();
+    const response = [getWorkLocationMock()];
 
     // Set up our expectation
     service.getWorkLocations().subscribe(next => {
