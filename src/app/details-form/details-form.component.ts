@@ -1,9 +1,9 @@
 // Angular
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 // Models
-import { DetailsModel } from 'src/app/models';
+import { DetailsModel, WorkLocationModel } from 'src/app/models';
 
 @Component({
   selector: 'sd-details-form',
@@ -11,6 +11,8 @@ import { DetailsModel } from 'src/app/models';
   styleUrls: ['./details-form.component.scss']
 })
 export class DetailsFormComponent implements OnInit {
+
+  @Input() workLocations: WorkLocationModel[];
 
   @Output() submitForm = new EventEmitter<DetailsModel>();
 
@@ -26,18 +28,25 @@ export class DetailsFormComponent implements OnInit {
   /**
    * Emit the contents of the form to the parent when the form is submitted.
    */
-  public onSubmit(studentDetails) {
+  public onSubmit(details) {
     if (this.detailsForm.valid) {
       this.details = {
-        name: studentDetails.name,
-        email: studentDetails.email,
-        degreeTitle: studentDetails.degreeTitle,
-        currentYearOfStudy: studentDetails.currentYear,
-        desiredJobType: null, // TODO - get this from the field when implemented
-        preferredWorkLocation: null // TODO - get this from the picklist when implemented
+        name: details.name,
+        email: details.email,
+        degreeTitle: details.degreeTitle,
+        currentYearOfStudy: details.currentYear,
+        desiredJobType: details.desiredJob,
+        preferredWorkLocation: this.findLocation(details.workLocation)
       };
       this.submitForm.emit(this.details);
     }
+  }
+
+  /**
+   * Find a Work Location in our stored array by ID.
+   */
+  private findLocation(id: string): WorkLocationModel {
+    return this.workLocations.find(location => location.id === id);
   }
 
   public onReset() {
@@ -50,6 +59,8 @@ export class DetailsFormComponent implements OnInit {
       email: ['', [Validators.required]],
       degreeTitle: ['', []],
       currentYear: [null, []],
+      desiredJob: ['', []],
+      workLocation: [null, []],
       terms: [false, [Validators.required]]
     });
   }

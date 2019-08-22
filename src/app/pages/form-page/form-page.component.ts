@@ -14,7 +14,9 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
     <div class="container">
       <h1>Student Details</h1>
 
-      <sd-details-form (submitForm)="addDetails($event)">
+      <sd-details-form
+        [workLocations]="workLocations"
+        (submitForm)="addDetails($event)">
       </sd-details-form>
     </div>
   `

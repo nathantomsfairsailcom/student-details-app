@@ -10,7 +10,7 @@ import {
 import { DetailsService } from './details-service';
 
 // Mocks
-import { getDetailsMock } from 'src/app/mocks';
+import { getDetailsMock, getWorkLocationsMock } from 'src/app/mocks';
 
 describe('Service: DetailsService (Mocked Rest)', () => {
   let service: DetailsService;
@@ -32,7 +32,22 @@ describe('Service: DetailsService (Mocked Rest)', () => {
     backend = mockBackend;
   }));
 
-  it('should make a POST request and return a response when saving student details', async(() => {
+  it('should make a GET request and return a response when retrieving work locations', async(() => {
+    const response = getWorkLocationsMock();
+
+    // Set up our expectation
+    service.getWorkLocations().subscribe(next => {
+      expect(next).toEqual(response);
+    });
+
+    // Mock the request
+    backend.match({
+      url: 'https://us-central1-student-details-app-sgp.cloudfunctions.net/locations',
+      method: 'GET'
+    })[0].flush(response);
+  }));
+
+  it('should make a POST request and return a response when saving details', async(() => {
     const response = {message: 'Successful'};
 
     // Set up our expectation
@@ -42,7 +57,7 @@ describe('Service: DetailsService (Mocked Rest)', () => {
 
     // Mock the request
     backend.match({
-      url: 'https://us-central1-student-details-app-sgp.cloudfunctions.net/save',
+      url: 'https://us-central1-student-details-app-sgp.cloudfunctions.net/people',
       method: 'POST'
     })[0].flush(response);
   }));
