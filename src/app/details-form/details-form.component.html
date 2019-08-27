@@ -1,29 +1,23 @@
-<form
-  [formGroup]="detailsForm"
-  (ngSubmit)="onSubmit(detailsForm.value)"
-  (ngReset)="onReset()">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="fullNamePrepend">Full name</span>
-      </div>
+<div class="form-wrapper">
+  <form
+    [formGroup]="detailsForm"
+    (ngSubmit)="onSubmit(detailsForm.value)"
+    (ngReset)="onReset()"
+  >
+    <div>
+      <p>Full name</p>
       <input type="text" class="form-control" formControlName="name" id="fullNameInput" placeholder="Enter full name" aria-describedby="fullNameHelp">
     </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupPrepend3">Email</span>
-      </div>
+    <div>
+      <p>Email</p>
       <input type="email" class="form-control" formControlName="email" id="emailInput" placeholder="Enter email" aria-describedby="emailHelp">
     </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="degreeTitlePrepend">Degree title</span>
-      </div>
+    <div>
+        <p>Degree title</p>
       <input type="text" class="form-control" formControlName="degreeTitle" id="degreeTitleInput" placeholder="Enter degree title" aria-describedby="degreeTitleHelp">
     </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="currentYearPrepend">Current year of study</span>
-      </div>
+    <div>
+      <p>Current year of study</p>
       <input type="number" class="form-control" formControlName="currentYear" id="currentYearInput" placeholder="Enter current year" aria-describedby="currentYearHelp" value=1>
     </div>
     <div class="button-group">
@@ -39,4 +33,4 @@
       </div>
     </div>
   </form>
-
+</div>

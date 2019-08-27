@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="assets/images/sage-people-logo.png" height="30" class="d-inline-block align-top" alt="">
+        <img src="assets/images/sage-logo.svg" height="30" class="d-inline-block align-top" alt="">
       </a>
     </nav>
   `,

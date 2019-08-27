@@ -1,13 +1,5 @@
-.input-group {
-  margin:10px 0px;
-}
-
 input[type=checkbox] {
   transform: scale(1.25);
-}
-
-.input-group-text {
-  min-width: 11em;
 }
 
 .button-group-right {
@@ -27,4 +19,8 @@ input[type=checkbox] {
 .form-check {
   display: inline-block;
   margin-right: 1em;
+}
+
+.form-wrapper {
+  max-width: 25em;
 }
