@@ -12,9 +12,11 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
   selector: 'sd-form-page',
   template: `
     <div class="container">
-      <h1>Student Details</h1>
+      <h1>Sage Candidate Details</h1>
 
-      <sd-details-form (submitForm)="addDetails($event)">
+      <sd-details-form
+        [workLocations]="workLocations"
+        (submitForm)="addDetails($event)">
       </sd-details-form>
     </div>
   `

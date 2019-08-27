@@ -104,11 +104,12 @@ exports.people = functions.https.onRequest((req, res) => {
     email: req.body.email,
     degreeTitle: req.body.degreeTitle,
     currentYearOfStudy: req.body.currentYearOfStudy,
-    desiredJobType: req.body.desiredJobType
+    desiredJobType: req.body.desiredJobType,
+    event: req.body.event
   };
-  if (req.body.preferredWorkLocation) {
-    newRecord.preferredLocation = req.body.preferredWorkLocation.officeLocation;
-    newRecord.preferredBusinessUnit = req.body.preferredWorkLocation.businessUnit;
+  if (req.body.workLocation) {
+    newRecord.preferredLocation = req.body.workLocation.officeLocation;
+    newRecord.preferredBusinessUnit = req.body.workLocation.businessUnit;
   } else {
     newRecord.preferredLocation = null;
     newRecord.preferredBusinessUnit = null;

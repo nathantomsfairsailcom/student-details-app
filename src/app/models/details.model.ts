@@ -5,5 +5,6 @@ export interface DetailsModel {
   degreeTitle?: string;
   currentYearOfStudy?: number;
   desiredJobType?: string;
-  preferredWorkLocation?: WorkLocationModel;
+  workLocation?: WorkLocationModel;
+  event?: string;
 }
