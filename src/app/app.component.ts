@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <sd-header></sd-header>
     <router-outlet></router-outlet>
-    <sd-footer></sd-footer>
+    <!--<sd-footer></sd-footer>-->
   `,
   styleUrls: ['./app.component.scss']
 })
