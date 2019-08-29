@@ -29,6 +29,7 @@ export class DetailsFormComponent implements OnInit {
    * Emit the contents of the form to the parent when the form is submitted.
    */
   public onSubmit(formDetails) {
+    console.log(formDetails)
     if (this.detailsForm.valid) {
       this.details = {
         name: formDetails.name,
@@ -48,10 +49,6 @@ export class DetailsFormComponent implements OnInit {
    */
   private findLocation(id: string): WorkLocationModel {
     return this.workLocations.find(location => location.id === id);
-  }
-
-  public onReset() {
-    this.resetFormGroup();
   }
 
   private resetFormGroup() {
