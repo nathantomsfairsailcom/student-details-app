@@ -1,43 +1,9 @@
-<div class="form-wrapper">
+<!-- <div class="form-wrapper">
   <form
     [formGroup]="detailsForm"
     (ngSubmit)="onSubmit(detailsForm.value)"
     (ngReset)="onReset()"
   >
-    <div>
-      <p>Full name</p>
-      <input type="text" class="form-control" formControlName="name" id="fullNameInput" placeholder="Enter full name"
-        aria-describedby="fullNameHelp">
-    </div>
-    <div>
-      <p>Email</p>
-      <input type="email" class="form-control" formControlName="email" id="emailInput" placeholder="Enter email"
-        aria-describedby="emailHelp">
-    </div>
-    <div>
-      <p>Degree title</p>
-      <input type="text" class="form-control" formControlName="degreeTitle" id="degreeTitleInput"
-        placeholder="Enter degree title" aria-describedby="degreeTitleHelp">
-    </div>
-    <div>
-      <p>Current year of study</p>
-      <input type="number" class="form-control" formControlName="currentYear" id="currentYearInput"
-        placeholder="Enter current year" aria-describedby="currentYearHelp" value=1>
-    </div>
-    <div>
-      <p>Desired job type</p>
-      <input type="text" class="form-control" formControlName="desiredJob" id="desiredJobInput"
-        placeholder="Enter desired job type" aria-describedby="desiredJobHelp">
-    </div>
-    <div>
-      <p>Location</p>
-      <select class="custom-select" formControlName="workLocation" id="workLocationInput"
-        aria-describedby="workLocationHelp">
-        <option *ngFor="let location of workLocations" [value]="location.id">
-          {{ location.officeLocation }} - {{ location.businessUnit }}
-        </option>
-      </select>
-    </div>
 
   <div>
       <p>Recruitment event</p>
@@ -66,4 +32,66 @@
     </div>
   </div>
 </form>
-</div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex"></div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Sage Candidate Details</h5>
+            <form
+              [formGroup]="detailsForm"
+              (ngSubmit)="onSubmit(detailsForm.value)"
+              (ngReset)="onReset()"class="form-signin"
+            >
+              <div class="form-label-group">
+                <input type="text" id="inputFullname" class="form-control" placeholder="Full Name" required autofocus>
+                <label for="inputFullname">Full Name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required>
+                <label for="inputEmail">Email Address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="inputDegreeTitle" class="form-control" placeholder="Degree Title" required>
+                <label for="inputDegreeTitle">Degree Title</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="inputYearOfStudy" class="form-control" placeholder="Current year of study" required>
+                <label for="inputYearOfStudy">Current year of study</label>
+              </div>
+
+              <hr>
+
+              <div class="form-label-group">
+                <input type="text" id="inputJobType" class="form-control" placeholder="Desired job type" required>
+                <label for="inputJobType">Desired job type</label>
+              </div>
+
+              <div class="form-label-group">
+                  <select class="custom-select" formControlName="workLocation" id="inputWorkLocation"
+                    aria-describedby="workLocationHelp" label="Work Location">
+                  <option *ngFor="let location of workLocations" [value]="location.id">
+                    {{ location.officeLocation }} - {{ location.businessUnit }}
+                  </option>
+                </select>
+                <!-- <label for="inputWorkLocation">Work Location</label> -->
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="inputRecruitmentEvent" class="form-control" placeholder="Recruitment event" required>
+                <label for="inputRecruitmentEvent">Recruitment event</label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Save Details</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

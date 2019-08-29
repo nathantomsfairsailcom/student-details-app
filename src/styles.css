@@ -3,4 +3,13 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0px;
+    /* background : #1a3947; */
+    background: #e8eaea;
+}
+
+.page-container {
+  background: #fff;
+  border-radius: 1em;
+  margin-top: 2.5em;
+  padding: 1.5em;
 }

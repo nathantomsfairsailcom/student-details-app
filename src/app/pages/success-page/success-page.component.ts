@@ -5,14 +5,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'sd-success',
   template: `
-    <h2 class="success-page__message">
-      Success!
-    </h2>
+    <div class="container page-container">
+      <h2 class="success-page__message">
+        Success!
+      </h2>
 
-    <div class="success-page__return-button-container">
-      <button (click)="onReturn()" type="reset" class="btn btn-light">
-        Return
-      </button>
+      <div class="success-page__return-button-container">
+        <button (click)="onReturn()" type="reset" class="btn btn-light">
+          Return
+        </button>
+      </div>
     </div>
   `,
   styleUrls: ['./success-page.component.scss']

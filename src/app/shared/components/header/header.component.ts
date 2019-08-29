@@ -4,9 +4,11 @@ import { Component } from '@angular/core';
   selector: 'sd-header',
   template: `
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/sage-logo.svg" height="30" class="d-inline-block align-top" alt="">
-      </a>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/sage-logo.svg" height="30" class="d-inline-block align-top" alt="">
+        </a>
+      </div>
     </nav>
   `,
   styleUrls: ['./header.component.scss']

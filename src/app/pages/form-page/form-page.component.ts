@@ -11,14 +11,10 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
 @Component({
   selector: 'sd-form-page',
   template: `
-    <div class="container">
-      <h1>Sage Candidate Details</h1>
-
       <sd-details-form
         [workLocations]="workLocations"
         (submitForm)="addDetails($event)">
       </sd-details-form>
-    </div>
   `
 })
 export class FormPageComponent implements OnInit {
