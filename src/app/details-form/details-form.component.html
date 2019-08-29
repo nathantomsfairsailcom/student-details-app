@@ -39,12 +39,12 @@
 
               <div class="form-label-group">
                   <select class="custom-select" formControlName="workLocation" id="inputWorkLocation"
-                    aria-describedby="workLocationHelp" label="Work Location">
+                    aria-describedby="workLocationHelp">
                   <option *ngFor="let location of workLocations" [value]="location.id">
                     {{ location.officeLocation }} - {{ location.businessUnit }}
                   </option>
                 </select>
-                <label for="inputWorkLocation">Work Location</label>
+                <!-- <label for="inputWorkLocation">Work Location</label> -->
               </div>
 
               <div class="form-label-group">
