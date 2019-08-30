@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {
+import { LoginPageComponent,
   FormPageComponent,
   SuccessPageComponent,
   AdminPageComponent
@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'candidates',
     component: AdminPageComponent
+  },
+  {
+  path:'login',
+  component: LoginPageComponent
   },
   {
     path: 'success',
