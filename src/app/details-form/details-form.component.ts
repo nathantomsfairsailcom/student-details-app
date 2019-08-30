@@ -11,7 +11,6 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
   styleUrls: ['./details-form.component.scss']
 })
 export class DetailsFormComponent implements OnInit {
-
   @Input() workLocations: WorkLocationModel[];
 
   @Output() submitForm = new EventEmitter<DetailsModel>();
@@ -63,5 +62,4 @@ export class DetailsFormComponent implements OnInit {
       terms: [false, [Validators.required]]
     });
   }
-
 }

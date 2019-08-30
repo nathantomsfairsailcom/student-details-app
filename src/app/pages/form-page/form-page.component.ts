@@ -13,18 +13,19 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
   template: `
       <sd-details-form
         [workLocations]="workLocations"
-        (submitForm)="addDetails($event)">
+        (submitForm)="addDetails($event)"
+      >
       </sd-details-form>
   `
 })
 export class FormPageComponent implements OnInit {
-
   workLocations: WorkLocationModel[];
   inProgress = false;
 
   constructor(
     @Inject(DetailsService) private detailsService: DetailsService,
-    private router: Router) {}
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getWorkLocations();

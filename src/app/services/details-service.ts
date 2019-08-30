@@ -10,7 +10,6 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
 
 @Injectable()
 export class DetailsService {
-
   baseUrl = 'https://us-central1-student-details-app-sgp.cloudfunctions.net';
 
   constructor(private http: HttpClient) {}
