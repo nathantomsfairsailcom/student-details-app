@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormPageComponent, SuccessPageComponent } from './pages';
+import { FormPageComponent, SuccessPageComponent, LoginPageComponent } from './pages';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
   {
     path: 'success',
     component: SuccessPageComponent

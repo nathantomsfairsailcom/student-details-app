@@ -9,11 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent, FooterComponent } from './shared/components';
-import { FormPageComponent, SuccessPageComponent } from './pages';
+import { FormPageComponent, SuccessPageComponent, LoginPageComponent } from './pages';
 import { DetailsFormComponent } from './details-form/details-form.component';
 
 // Services
 import { DetailsService } from './services';
+
+// Forms
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -23,7 +25,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       FooterComponent,
       FormPageComponent,
       SuccessPageComponent,
-      DetailsFormComponent
+      DetailsFormComponent,
+      LoginPageComponent
    ],
    imports: [
       BrowserModule,
