@@ -18,6 +18,21 @@ import { DetailsService } from './services';
 // Forms
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCeGE_Q72ocTkkL852sw-IQGjqxdw8gFoU',
+  authDomain: 'student-details-app-sgp.firebaseapp.com',
+  databaseURL: 'https://student-details-app-sgp.firebaseio.com',
+  projectId: 'student-details-app-sgp',
+  storageBucket: 'student-details-app-sgp.appspot.com',
+  messagingSenderId: '1000454251268',
+  appId: '1:1000454251268:web:7b0acb11bb104788'
+};
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -33,7 +48,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       HttpClientModule,
       AppRoutingModule,
       ReactiveFormsModule,
-      FormsModule
+      FormsModule,
+      AngularFireModule.initializeApp(firebaseConfig),
+      AngularFireAuthModule
    ],
   providers: [DetailsService],
    bootstrap: [
