@@ -28,7 +28,6 @@ export class DetailsFormComponent implements OnInit {
    * Emit the contents of the form to the parent when the form is submitted.
    */
   public onSubmit(formDetails) {
-    console.log(formDetails)
     if (this.detailsForm.valid) {
       this.details = {
         name: formDetails.name,

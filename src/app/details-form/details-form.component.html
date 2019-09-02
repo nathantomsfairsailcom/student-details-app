@@ -8,7 +8,6 @@
             <form
               [formGroup]="detailsForm"
               (ngSubmit)="onSubmit(detailsForm.value)"
-              (ngReset)="onReset()"class="form-signin"
             >
               <div class="form-label-group">
                 <input type="text" id="inputFullname" formControlName="name" class="form-control" placeholder="Full Name" required autofocus>
@@ -39,12 +38,12 @@
 
               <div class="form-label-group">
                   <select class="custom-select" formControlName="workLocation" id="inputWorkLocation"
-                    aria-describedby="workLocationHelp">
+                    aria-describedby="workLocationHelp" placeholder="Work Location">
                   <option *ngFor="let location of workLocations" [value]="location.id">
                     {{ location.officeLocation }} - {{ location.businessUnit }}
                   </option>
                 </select>
-                <!-- <label for="inputWorkLocation">Work Location</label> -->
+                <label for="inputWorkLocation">Work Location</label>
               </div>
 
               <div class="form-label-group">

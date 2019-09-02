@@ -18,7 +18,7 @@ import { DetailsFormComponent } from './details-form/details-form.component';
 import { PeopleFormComponent } from './people-form/people-form.component';
 
 // Services
-import { DetailsService } from './services';
+import { DetailsService, AuthService } from './services';
 
 // Forms
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -60,7 +60,7 @@ const firebaseConfig = {
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireAuthModule
   ],
-  providers: [DetailsService, CandidatesService],
+  providers: [DetailsService, CandidatesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
