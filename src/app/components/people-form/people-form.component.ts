@@ -8,7 +8,7 @@ import { CandidatesModel } from 'src/app/models';
   selector: 'sd-people-form',
   template: `
     <div class="table-responsive">
-      <table class="table borderless">
+      <table class="table borderless table-hover">
         <thead>
           <tr>
             <th scope="col-sm">Name</th>
