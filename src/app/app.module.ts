@@ -14,8 +14,7 @@ import { LoginPageComponent,
   FormPageComponent,
   SuccessPageComponent
 } from './pages';
-import { DetailsFormComponent } from './details-form/details-form.component';
-import { PeopleFormComponent } from './people-form/people-form.component';
+import { DetailsFormComponent, PeopleFormComponent } from './components';
 
 // Services
 import { DetailsService, AuthService } from './services';

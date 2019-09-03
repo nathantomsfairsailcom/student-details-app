@@ -30,13 +30,13 @@ input {
   width: 100%;
 }
 
-.form-signin .btn {
+.card-signin .btn {
   font-size: 80%;
   letter-spacing: .1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
-  background: linear-gradient(to right, #009900, #008400);
+  background: linear-gradient(to right, #009900, #006300);
 }
 
 .form-label-group {
@@ -78,14 +78,6 @@ input {
   select + label {
     pointer-events:none;
   }
-
-//   select>.ng-dirty {
-//       bottom: 100%;
-//       margin-bottom: -1.6rem;
-//       font-size: 70%;
-//       padding: .1rem .6rem;
-//       z-index: 2;
-//     }
 }
 
 .form-label-group input::-webkit-input-placeholder {

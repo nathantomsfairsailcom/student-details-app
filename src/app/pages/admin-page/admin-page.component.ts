@@ -1,8 +1,12 @@
 // Angular
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Services
 import { CandidatesService } from 'src/app/services/candidates-service';
+import { AuthService } from 'src/app/services';
+
+// Models
 import { CandidatesModel } from 'src/app/models';
 
 @Component({
@@ -30,17 +34,23 @@ export class AdminPageComponent implements OnInit {
 
   constructor(
     @Inject(CandidatesService)
-    private candidatesServices: CandidatesService
+    private candidatesServices: CandidatesService,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.getCandidates();
+    if (this.authService.isLoggedIn) {
+      this.getCandidates();
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 
   /**
    * Fetch from the backend.
    */
-  getCandidates(): void {
+  private getCandidates(): void {
     this.inProgress = true;
 
     this.candidatesServices.getCandidates().subscribe(
