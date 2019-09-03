@@ -11,16 +11,20 @@ import { DetailsModel, WorkLocationModel } from 'src/app/models';
 @Component({
   selector: 'sd-form-page',
   template: `
-      <sd-details-form
-        [workLocations]="workLocations"
-        (submitForm)="addDetails($event)"
-      >
-      </sd-details-form>
+    <div class="alert alert-danger text-uppercase" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <sd-details-form
+      [workLocations]="workLocations"
+      (submitForm)="addDetails($event)"
+    >
+    </sd-details-form>
   `
 })
 export class FormPageComponent implements OnInit {
   workLocations: WorkLocationModel[];
   inProgress = false;
+  errorMessage: string = '';
 
   constructor(
     @Inject(DetailsService) private detailsService: DetailsService,
@@ -44,6 +48,8 @@ export class FormPageComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error message: ' + error.error.message);
+        this.errorMessage = error.error.message;
+
         this.inProgress = false;
       }
     );
@@ -62,6 +68,7 @@ export class FormPageComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error message: ' + error.error.message);
+        this.errorMessage = error.error.message;
         this.inProgress = false;
       }
     );
